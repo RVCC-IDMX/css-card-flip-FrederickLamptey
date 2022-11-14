@@ -1,0 +1,6 @@
+@use "../abstracts/mixins" as mixins;
+body {
+    @include mixins.grid-center;
+    height: 100vh;
+    font-family: "Nunito"
+}
