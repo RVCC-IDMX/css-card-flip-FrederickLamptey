@@ -16,5 +16,7 @@
 // }
 
 /* home */
+@use "../base/typography" as type;
 @use "../components/body";
 @use "../components/article";
+
