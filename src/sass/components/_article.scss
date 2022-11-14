@@ -15,12 +15,13 @@
 
 .card {
     width: 600px;
+    //aspect-ratio: 25/38;
 }
 
 .card__content {
     text-align: center;
     position: relative;
-    padding: 15em 5em;
+    //padding: 15em 5em;
     transition: transform 3s;
     transform-style: preserve-3d;
 }
@@ -29,7 +30,7 @@
     transform: rotateY(.5turn);
 }
 
-.card__font,
+.card__front,
 .card__back {
     @include mixins.grid-content;
     position: absolute;
@@ -42,12 +43,13 @@
     transform-style: preserve-3d;
 }
 
-.card__font {
-    background-color: var(--clr);
-    background-image: url("/src/images/turkey.jpg");
+.card__front {
+   // background-color: var(--clr);
+    background-image: url("/images/turkey2.jpg");
     background-size: cover;
     background-blend-mode: overlay;
     color: #000;
+    //background-color: green;
 }
 
 .card__front::before {
