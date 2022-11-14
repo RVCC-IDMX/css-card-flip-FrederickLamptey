@@ -9,12 +9,12 @@
   --fw-normal: 400;
   --fw-bold: 700;
   
-  --clr: #b7c9e5;
+  --clr: #000;
   --spacer: 1em;
 }
 
 .card {
-    width: 400px;
+    width: 600px;
 }
 
 .card__content {
@@ -47,7 +47,7 @@
     background-image: url("/src/images/turkey.jpg");
     background-size: cover;
     background-blend-mode: overlay;
-    color: #333;
+    color: #000;
 }
 
 .card__front::before {
@@ -88,5 +88,5 @@
 .card__back {
   transform: rotateY(.5turn);
   color: var(--clr);
-  background: #333;
+  background: #87CEFA;
 }
