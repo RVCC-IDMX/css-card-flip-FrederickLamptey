@@ -1,61 +1,66 @@
-// _article.scss
 @use "../abstracts/mixins" as mixins;
 
 :root {
   --level-one: translateZ(3rem);
   --level-two: translateZ(6rem);
   --level-three: translateZ(9rem);
-  
+
   --fw-normal: 400;
   --fw-bold: 700;
-  
+
   --clr: #000;
   --spacer: 1em;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
 .card {
-    width: 600px;
-    //aspect-ratio: 25/38;
+  width: 530px;
 }
 
 .card__content {
-    text-align: center;
-    position: relative;
-    //padding: 15em 5em;
-    transition: transform 3s;
-    transform-style: preserve-3d;
+  text-align: center;
+  position: relative;
+  padding: 22em 5em;
+  transition: transform 3s;
+  transform-style: preserve-3d;
 }
 
 .card:hover .card__content {
-    transform: rotateY(.5turn);
+  transform: rotateY(0.5turn);
 }
 
 .card__front,
 .card__back {
-    @include mixins.grid-content;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 5em 3em;
-    backface-visibility: hidden;
-    transform-style: preserve-3d;
+  @include mixins.grid-content;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1em 3em;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
 }
 
 .card__front {
-   // background-color: var(--clr);
-    background-image: url("/images/turkey2.jpg");
-    background-size: cover;
-    background-blend-mode: overlay;
-    color: #000;
-    //background-color: green;
+  background-color: var(--clr);
+  background-image: url("/images/turkey2.jpg");
+  background-size: cover;
+  // background-blend-mode: overlay;
+  color: white;
 }
 
 .card__front::before {
   content: '';
   position: absolute;
-  //--spacer: 1em;
+  // --spacer: 1em;
   top: var(--spacer);
   bottom: var(--spacer);
   left: var(--spacer);
@@ -75,9 +80,9 @@
   transform: var(--level-two);
   text-transform: uppercase;
   letter-spacing: 4px;
-  font-size: .75rem;
+  font-size: 0.75rem;
   font-weight: var(--fw-bold);
-  opacity: .7;
+  opacity: 0.7;
 }
 
 .card__body {
@@ -85,10 +90,25 @@
   font-weight: var(fw-normal);
   font-size: 1.5rem;
   line-height: 1.6;
+  text-align: left;
 }
 
 .card__back {
-  //transform: rotateY(.5turn);
-  color: var(--clr);
-  background: #87CEFA;
+  transform: rotateY(0.5turn);
+ // color: var(--clr);
+ color: white;
+  background: #8B4513;
+}
+
+// Quick and easy way to size card down on smaller screens
+@media screen and (max-width: 500px) {
+  .card {
+    transform: scale(0.75);
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .card {
+    transform: scale(0.50);
+  }
 }
